@@ -86,7 +86,7 @@ public class QuaquaJfcLafModule implements PluginModule {
                     Logger.getLogger(QuaquaJfcLafModule.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 return new OpenFileResult(
-                        dialogResult, openFileChooser.getSelectedFile(),
+                        dialogResultToResultType(dialogResult), openFileChooser.getSelectedFile(),
                         fileFilter instanceof FileType ? (FileType) fileFilter : null
                 );
             }
@@ -115,7 +115,7 @@ public class QuaquaJfcLafModule implements PluginModule {
                     Logger.getLogger(QuaquaJfcLafModule.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 return new OpenFileResult(
-                        dialogResult, saveFileChooser.getSelectedFile(),
+                        dialogResultToResultType(dialogResult), saveFileChooser.getSelectedFile(),
                         fileFilter instanceof FileType ? (FileType) fileFilter : null
                 );
             }
@@ -172,6 +172,25 @@ public class QuaquaJfcLafModule implements PluginModule {
     }
 
     public void unregisterModule(String moduleId) {
+    }
+
+    @Nonnull
+    private static OpenFileResult.ResultType dialogResultToResultType(int dialogResult) {
+        OpenFileResult.ResultType resultType;
+        switch (dialogResult) {
+            case JFileChooser.APPROVE_OPTION:
+                resultType = OpenFileResult.ResultType.APPROVED;
+                break;
+            case JFileChooser.CANCEL_OPTION:
+                resultType = OpenFileResult.ResultType.CANCELLED;
+                break;
+            case JFileChooser.ERROR_OPTION:
+                resultType = OpenFileResult.ResultType.FAILED;
+                break;
+            default:
+                throw new AssertionError();
+        }
+        return resultType;
     }
 
     @ParametersAreNonnullByDefault
