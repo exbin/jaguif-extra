@@ -5,8 +5,8 @@ plugins {
 }
 
 group = 'org.exbin.jaguif.plugins'
-ext.libraryName = 'ExBin Chinese (Traditional) Language Plugin'
-ext.libraryDescription = 'Chinese (Traditional) language plugin for ExBin Framework'
+ext.libraryName = 'Java GUI Framework Library'
+ext.libraryDescription = 'Library for additional GUI functionality for the ExBin project'
 
 apply from: '../plugins.gradle'
 

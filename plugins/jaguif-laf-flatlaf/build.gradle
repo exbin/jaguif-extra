@@ -5,8 +5,8 @@ plugins {
 }
 
 group = 'org.exbin.jaguif.plugins'
-ext.libraryName = 'FlatLaf Look and Feel Plugin'
-ext.libraryDescription = 'FlatLaf plugin for ExBin Framework'
+ext.libraryName = 'Java GUI Framework Library'
+ext.libraryDescription = 'Library for additional GUI functionality for the ExBin project'
 
 apply from: '../plugins.gradle'
 

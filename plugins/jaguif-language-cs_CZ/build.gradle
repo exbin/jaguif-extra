@@ -5,8 +5,8 @@ plugins {
 }
 
 group = 'org.exbin.jaguif.plugins'
-ext.libraryName = 'ExBin cs_CZ Language Plugin'
-ext.libraryDescription = 'Czech language plugin for ExBin Framework'
+ext.libraryName = 'Java GUI Framework Library'
+ext.libraryDescription = 'Library for additional GUI functionality for the ExBin project'
 
 apply from: '../plugins.gradle'
 

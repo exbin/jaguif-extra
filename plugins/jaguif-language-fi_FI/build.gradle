@@ -5,8 +5,8 @@ plugins {
 }
 
 group = 'org.exbin.jaguif.plugins'
-ext.libraryName = 'ExBin fi_FI Language Plugin'
-ext.libraryDescription = 'Finnish language plugin for ExBin Framework'
+ext.libraryName = 'Java GUI Framework Library'
+ext.libraryDescription = 'Library for additional GUI functionality for the ExBin project'
 
 apply from: '../plugins.gradle'
 
