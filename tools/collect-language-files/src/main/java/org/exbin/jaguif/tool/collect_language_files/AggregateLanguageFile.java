@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.exbin.jaguif.plugins.tools.collect_language_files;
+package org.exbin.jaguif.tool.collect_language_files;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -40,8 +40,8 @@ public class AggregateLanguageFile {
 //    private static final String PLUGIN_CODE = "en_US";
 //    private static final String LANGUAGE_CODE = "";
     private static final String PROJECT_DIR = "../../../bined";
-    private static final String FRAMEWORK_DIR = "../../../exbin-framework-java";
-    private static final String TARGET_DIR = "../../plugins/exbin-framework-language-" + PLUGIN_CODE + "/src/main/resources";
+    private static final String FRAMEWORK_DIR = "../../../jaguif";
+    private static final String TARGET_DIR = "../../plugins/jaguif-language-" + PLUGIN_CODE + "/src/main/resources";
 
     // private static final Set<String> subGroups = new HashSet<>(java.util.Arrays.asList("bined", "editor", "addon", "action", "window", "operation"));
     private static final Set<String> subGroups = new HashSet<>(java.util.Arrays.asList("bined", "editor"));
@@ -57,7 +57,7 @@ public class AggregateLanguageFile {
             OutputStreamWriter out = new OutputStreamWriter(fos, "UTF-8");
             processModuleDir(TARGET_DIR + "/org/exbin/bined/editor", "bined-editor", out);
 
-            File processedFolder = new File(TARGET_DIR, "org/exbin/framework");
+            File processedFolder = new File(TARGET_DIR, "org/exbin/jaguif");
             File[] listFiles = processedFolder.listFiles();
             if (listFiles == null) {
                 return;
@@ -74,7 +74,7 @@ public class AggregateLanguageFile {
             }
 
             for (String subGroup : subGroups) {
-                processedFolder = new File(TARGET_DIR, "org/exbin/framework/" + subGroup);
+                processedFolder = new File(TARGET_DIR, "org/exbin/jaguif/" + subGroup);
                 listFiles = processedFolder.listFiles();
                 if (listFiles == null) {
                     return;
@@ -270,8 +270,8 @@ public class AggregateLanguageFile {
             for (File module : projectModules) {
                 if (module.isDirectory()) {
                     String moduleName = module.getName();
-                    if (moduleName.startsWith("exbin-framework-")) {
-                        moduleName = moduleName.substring(16);
+                    if (moduleName.startsWith("jaguif-")) {
+                        moduleName = moduleName.substring(7);
                     }
                     processModuleResources(module, moduleName, "", out);
                 }
@@ -288,8 +288,8 @@ public class AggregateLanguageFile {
             for (File module : projectModules) {
                 if (module.isDirectory()) {
                     String moduleName = module.getName();
-                    if (moduleName.startsWith("exbin-framework-")) {
-                        moduleName = moduleName.substring(16);
+                    if (moduleName.startsWith("jaguif-")) {
+                        moduleName = moduleName.substring(7);
                     }
                     processModuleResources(module, moduleName, "", out);
                 }
@@ -306,8 +306,8 @@ public class AggregateLanguageFile {
             for (File module : frameworkModules) {
                 if (module.isDirectory()) {
                     String moduleName = module.getName();
-                    if (moduleName.startsWith("exbin-framework-")) {
-                        moduleName = moduleName.substring(16);
+                    if (moduleName.startsWith("jaguif-")) {
+                        moduleName = moduleName.substring(7);
                     }
                     processModuleResources(module, moduleName, "", out);
                 }

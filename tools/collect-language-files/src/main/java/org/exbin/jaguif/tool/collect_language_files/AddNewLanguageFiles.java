@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.exbin.jaguif.plugins.tools.collect_language_files;
+package org.exbin.jaguif.tool.collect_language_files;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,8 +29,8 @@ public class AddNewLanguageFiles {
 
     private static final String PLUGIN_CODE = "undef";
     private static final String LANGUAGE_CODE = PLUGIN_CODE;
-    private static final String SOURCE_DIR = "../../plugins/exbin-framework-language-en_US/src/main/resources";
-    private static final String TARGET_DIR = "../../plugins/exbin-framework-language-" + PLUGIN_CODE + "/src/main/resources";
+    private static final String SOURCE_DIR = "../../plugins/jaguif-language-en_US/src/main/resources";
+    private static final String TARGET_DIR = "../../plugins/jaguif-language-" + PLUGIN_CODE + "/src/main/resources";
 
     public static void main(String[] args) {
         File projectDir = new File(SOURCE_DIR);

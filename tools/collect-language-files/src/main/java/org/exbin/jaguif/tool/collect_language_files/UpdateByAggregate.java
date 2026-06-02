@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.exbin.jaguif.plugins.tools.collect_language_files;
+package org.exbin.jaguif.tool.collect_language_files;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -39,8 +39,8 @@ public class UpdateByAggregate {
     private static final String PLUGIN_CODE = "undef";
     private static final String LANGUAGE_CODE = PLUGIN_CODE;
     private static final String PROJECT_DIR = "../../../bined";
-    private static final String FRAMEWORK_DIR = "../../../exbin-framework-java";
-    private static final String TARGET_DIR = "../../plugins/exbin-framework-language-" + PLUGIN_CODE + "/src/main/resources";
+    private static final String FRAMEWORK_DIR = "../../../jaguif";
+    private static final String TARGET_DIR = "../../plugins/jaguif-language-" + PLUGIN_CODE + "/src/main/resources";
     private static boolean generateDiffFile = true;
 
     private static final Map<String, Map<String, Map<String, String>>> aggregateKeys = new HashMap<>();
@@ -143,7 +143,7 @@ public class UpdateByAggregate {
         for (File module : projectModules) {
             if (module.isDirectory()) {
                 String moduleName = module.getName();
-                if (moduleName.startsWith("exbin-framework-")) {
+                if (moduleName.startsWith("jaguif-")) {
                     moduleName = moduleName.substring(16);
                 }
                 processModuleResources(module, moduleName, "", diffOut);
@@ -161,7 +161,7 @@ public class UpdateByAggregate {
         for (File module : projectModules) {
             if (module.isDirectory()) {
                 String moduleName = module.getName();
-                if (moduleName.startsWith("exbin-framework-")) {
+                if (moduleName.startsWith("jaguif-")) {
                     moduleName = moduleName.substring(16);
                 }
                 processModuleResources(module, moduleName, "", diffOut);
@@ -179,7 +179,7 @@ public class UpdateByAggregate {
         for (File module : frameworkModules) {
             if (module.isDirectory()) {
                 String moduleName = module.getName();
-                if (moduleName.startsWith("exbin-framework-")) {
+                if (moduleName.startsWith("jaguif-")) {
                     moduleName = moduleName.substring(16);
                 }
                 processModuleResources(module, moduleName, "", diffOut);

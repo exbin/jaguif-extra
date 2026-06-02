@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.exbin.jaguif.plugins.tools.collect_language_files;
+package org.exbin.jaguif.tool.collect_language_files;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,8 +34,8 @@ import java.util.logging.Logger;
 public class CollectIconsFromLanguageFiles {
 
     private static final String PROJECT_DIR = "../../../bined";
-    private static final String FRAMEWORK_DIR = "../../../exbin-framework-java";
-    private static final String TARGET_DIR = "../../plugins/exbin-framework-iconset/src/main/resources";
+    private static final String FRAMEWORK_DIR = "../../../jaguif";
+    private static final String TARGET_DIR = "../../plugins/jaguif-iconset/src/main/resources";
     private static final List<String> EXCEPTIONS = Arrays.asList(
             "Application.release", "Application.mode", "Application.version", "Application.homepage", "Application.vendorId", "Application.id", "Application.lookAndFeel", "Application.product", "Application.vendor",
             "Application.licenseFile", "Application.authors");
