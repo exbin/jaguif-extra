@@ -1,7 +1,7 @@
 Java GUI Framework - Additional Modules
 =======================================
 
-Additional modules for Java GUI Fraework for ExBin project (jaguif).
+Additional modules for Java GUI Framework for ExBin project (jaguif).
 
 These plugins are distributed separately as an optional functionality and can have different licenses.
 
