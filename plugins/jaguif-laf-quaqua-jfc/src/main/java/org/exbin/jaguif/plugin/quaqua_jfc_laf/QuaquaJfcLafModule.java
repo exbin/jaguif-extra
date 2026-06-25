@@ -20,9 +20,8 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.ParametersAreNonnullByDefault;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;
 import javax.swing.JFileChooser;
 import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
@@ -43,7 +42,7 @@ import org.exbin.jaguif.ui.theme.api.UiThemeModuleApi;
 /**
  * Quaqua file dialogs plugin.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class QuaquaJfcLafModule implements PluginModule {
 
     public static final String ALL_FILES_FILTER = "AllFilesFilter";
@@ -57,12 +56,10 @@ public class QuaquaJfcLafModule implements PluginModule {
     public void register() {
         FileModuleApi fileModule = App.getModule(FileModuleApi.class);
         fileModule.registerFileDialogsProvider(PROVIDER_ID, new FileDialogsProvider() {
-            @Nonnull
             public String getProviderName() {
                 return "Quaqua JFC";
             }
 
-            @Nonnull
             @Override
             public OpenFileResult showOpenFileDialog(Component parentComponent, FileTypes fileTypes, @Nullable File selectedFile, @Nullable UsedDirectoryApi usedDirectory, @Nullable String dialogName) {
                 LookAndFeel lookAndFeel = UIManager.getLookAndFeel();
@@ -174,7 +171,6 @@ public class QuaquaJfcLafModule implements PluginModule {
     public void unregisterModule(String moduleId) {
     }
 
-    @Nonnull
     private static OpenFileResult.ResultType dialogResultToResultType(int dialogResult) {
         OpenFileResult.ResultType resultType;
         switch (dialogResult) {
@@ -193,7 +189,7 @@ public class QuaquaJfcLafModule implements PluginModule {
         return resultType;
     }
 
-    @ParametersAreNonnullByDefault
+    @NullMarked
     public static class AllFilesFilter extends FileFilter implements FileType {
 
         @Override
@@ -201,13 +197,11 @@ public class QuaquaJfcLafModule implements PluginModule {
             return true;
         }
 
-        @Nonnull
         @Override
         public String getDescription() {
             return "All files (*)";
         }
 
-        @Nonnull
         @Override
         public String getFileTypeId() {
             return ALL_FILES_FILTER;

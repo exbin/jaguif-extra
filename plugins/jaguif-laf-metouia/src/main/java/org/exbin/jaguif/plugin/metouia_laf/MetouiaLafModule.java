@@ -17,8 +17,7 @@ package org.exbin.jaguif.plugin.metouia_laf;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import javax.swing.UIManager;
 import org.exbin.jaguif.App;
 import org.exbin.jaguif.PluginModule;
@@ -28,7 +27,7 @@ import org.exbin.jaguif.ui.theme.api.UiThemeModuleApi;
 /**
  * Metouia look and feel plugin.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class MetouiaLafModule implements PluginModule {
 
     public static final String METOUIA_LAF_CLASS = "net.sourceforge.mlf.metouia.MetouiaLookAndFeel";
@@ -40,13 +39,11 @@ public class MetouiaLafModule implements PluginModule {
     public void register() {
         UiThemeModuleApi themeModule = App.getModule(UiThemeModuleApi.class);
         themeModule.registerLafPlugin(new LafProvider() {
-            @Nonnull
             @Override
             public String getLafId() {
                 return METOUIA_LAF_CLASS;
             }
 
-            @Nonnull
             @Override
             public String getLafName() {
                 return "Metouia";

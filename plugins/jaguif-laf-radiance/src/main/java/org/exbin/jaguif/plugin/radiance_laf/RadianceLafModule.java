@@ -18,7 +18,7 @@ package org.exbin.jaguif.plugin.radiance_laf;
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -31,7 +31,7 @@ import org.pushingpixels.radiance.theming.api.skin.RadianceBusinessLookAndFeel;
 /**
  * Darcula look and feel plugin.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class RadianceLafModule implements PluginModule {
 
     public static final String LAF_NAME = "Radiance";

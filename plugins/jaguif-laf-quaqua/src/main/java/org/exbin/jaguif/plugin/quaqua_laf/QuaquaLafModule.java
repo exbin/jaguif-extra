@@ -15,8 +15,7 @@
  */
 package org.exbin.jaguif.plugin.quaqua_laf;
 
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import javax.swing.UIManager;
 import org.exbin.jaguif.App;
 import org.exbin.jaguif.Module;
@@ -26,7 +25,7 @@ import org.exbin.jaguif.ui.theme.api.UiThemeModuleApi;
 /**
  * Quaqua look and feel plugin.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class QuaquaLafModule implements Module {
 
     public static final String LAF_NAME = "Quaqua";
@@ -36,13 +35,11 @@ public class QuaquaLafModule implements Module {
         if (System.getProperty("os.name", "").startsWith("Mac OS")) {
             UiThemeModuleApi themeModule = App.getModule(UiThemeModuleApi.class);
             themeModule.registerLafPlugin(new LafProvider() {
-                @Nonnull
                 @Override
                 public String getLafId() {
                     return QUAQUA_LAF_CLASS;
                 }
 
-                @Nonnull
                 @Override
                 public String getLafName() {
                     return LAF_NAME;

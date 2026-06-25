@@ -25,8 +25,7 @@ import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import com.formdev.flatlaf.util.SystemInfo;
 import java.io.File;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
@@ -46,7 +45,7 @@ import org.exbin.jaguif.ui.theme.api.UiThemeModuleApi;
 /**
  * FlatLaf look and feel plugin.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class FlatLafLafModule implements PluginModule {
 
     public static final String FLATLAF = "FlatLaf";
@@ -68,13 +67,11 @@ public class FlatLafLafModule implements PluginModule {
 
         UiThemeModuleApi themeModule = App.getModule(UiThemeModuleApi.class);
         themeModule.registerLafPlugin(new ConfigurableLafProvider() {
-            @Nonnull
             @Override
             public String getLafId() {
                 return FlatLaf.class.getName();
             }
 
-            @Nonnull
             @Override
             public String getLafName() {
                 return FLATLAF;
@@ -91,11 +88,9 @@ public class FlatLafLafModule implements PluginModule {
                 applyLookAndFeel(getLafId());
             }
 
-            @Nonnull
             @Override
             public SettingsComponentProvider getSettingsComponentProvider() {
                 return new SettingsComponentProvider() {
-                    @Nonnull
                     @Override
                     public SettingsComponent createComponent() {
                         return new LafOptionsPanel();

@@ -15,15 +15,14 @@
  */
 package org.exbin.jaguif.plugin.flatlaf_laf.options;
 
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import org.exbin.jaguif.options.settings.api.SettingsOptions;
 import org.exbin.jaguif.options.api.OptionsStorage;
 
 /**
  * FlatLaf options.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class LafOptions implements SettingsOptions {
 
     public static final String KEY_USE_BUILDIN_THEME = "flatlaf.useBuildInTheme";
@@ -46,7 +45,6 @@ public class LafOptions implements SettingsOptions {
         storage.putBoolean(KEY_USE_BUILDIN_THEME, useBuildInTheme);
     }
 
-    @Nonnull
     public String getBuildInTheme() {
         return storage.get(KEY_BUILDIN_THEME, "");
     }
@@ -55,7 +53,6 @@ public class LafOptions implements SettingsOptions {
         storage.put(KEY_BUILDIN_THEME, buildInTheme);
     }
 
-    @Nonnull
     public String getCustomFileTheme() {
         return storage.get(KEY_CUSTOM_THEME_FILE, "");
     }

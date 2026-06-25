@@ -15,7 +15,7 @@
  */
 package org.exbin.jaguif.plugin.substance_laf;
 
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import javax.swing.UIManager;
 import org.exbin.jaguif.App;
 import org.exbin.jaguif.PluginModule;
@@ -28,7 +28,7 @@ import org.pushingpixels.substance.api.skin.SubstanceGraphiteLookAndFeel;
 /**
  * Substance look and feel plugin.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class SubstanceLafModule implements PluginModule {
 
     public static final String SUBSTANCE_GRAPHITE = "Substance Graphite";

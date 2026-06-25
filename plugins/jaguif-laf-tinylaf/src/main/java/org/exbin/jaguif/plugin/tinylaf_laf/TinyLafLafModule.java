@@ -17,8 +17,7 @@ package org.exbin.jaguif.plugin.tinylaf_laf;
 
 import java.awt.Toolkit;
 import java.io.File;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.UIManager;
@@ -41,7 +40,7 @@ import org.exbin.jaguif.ui.theme.api.UiThemeModuleApi;
 /**
  * TinyLaf look and feel plugin.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class TinyLafLafModule implements PluginModule {
 
     public TinyLafLafModule() {
@@ -55,13 +54,11 @@ public class TinyLafLafModule implements PluginModule {
 
         UiThemeModuleApi themeModule = App.getModule(UiThemeModuleApi.class);
         themeModule.registerLafPlugin(new ConfigurableLafProvider() {
-            @Nonnull
             @Override
             public String getLafId() {
                 return TinyLookAndFeel.class.getName();
             }
 
-            @Nonnull
             @Override
             public String getLafName() {
                 return "TinyLaf";
@@ -77,11 +74,9 @@ public class TinyLafLafModule implements PluginModule {
                 applyLookAndFeel(getLafId());
             }
 
-            @Nonnull
             @Override
             public SettingsComponentProvider getSettingsComponentProvider() {
                 return new SettingsComponentProvider() {
-                    @Nonnull
                     @Override
                     public SettingsComponent createComponent() {
                         return new LafOptionsPanel();

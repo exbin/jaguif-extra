@@ -17,8 +17,7 @@ package org.exbin.jaguif.plugin.flatlaf_laf.gui;
 
 import java.io.File;
 import java.util.ResourceBundle;
-import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jspecify.annotations.NullMarked;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
@@ -33,7 +32,7 @@ import org.exbin.jaguif.plugin.flatlaf_laf.options.LafOptions;
 /**
  * FlatLaf options panel.
  */
-@ParametersAreNonnullByDefault
+@NullMarked
 public class LafOptionsPanel extends javax.swing.JPanel implements SettingsComponent {
 
     protected final java.util.ResourceBundle resourceBundle = App.getModule(LanguageModuleApi.class).getBundle(LafOptionsPanel.class);
@@ -57,7 +56,6 @@ public class LafOptionsPanel extends javax.swing.JPanel implements SettingsCompo
         model.addElement(FlatLafLafModule.FLATLAF_MAC_LIGHT);
     }
 
-    @Nonnull
     @Override
     public ResourceBundle getResourceBundle() {
         return resourceBundle;
@@ -223,7 +221,6 @@ public class LafOptionsPanel extends javax.swing.JPanel implements SettingsCompo
                 return true;
             }
 
-            @Nonnull
             @Override
             public String getDescription() {
                 return resourceBundle.getString("themesFileFilter.description");
